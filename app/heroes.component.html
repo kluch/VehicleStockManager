@@ -1,0 +1,22 @@
+<h2>Add Car</h2>
+<div>
+  <label>Make:</label> <input #make /><br>
+  <label>Model:</label> <input #model /><br>
+  <label>Year:</label> <input #year /><br>
+  <label>KM:</label> <input #km /><br>
+  <label>DealerName:</label> <input #dealername /><br>
+  <label>StockNO:</label> <input #stockno />  <br>
+  <!--<input type="file" (change)="onChange($event)" placeholder="Upload file..." />
+<button type="button" (click)="upload()">Upload</button><br>-->
+<div>  
+    <input type="file" multiple (change)="fileChange(input)" #input />
+</div>  
+<!--<div *ngFor="file_src of file_srcs">  
+    <img src='{{ file_src }}' alt=""/>
+</div>-->
+<div>
+    <button (click)="add(make.value, model.value, year.value, km.value, dealername.value, stockno.value);  make.value='';model.value='';year.value='';km.value='';dealername.value='';stockno.value=''">
+    Add
+  </button>
+  <div>
+</div>

@@ -1,0 +1,21 @@
+<div *ngIf="hero">
+  <h2>{{car.name}} details!</h2>
+  <div>
+    <label>id: </label>{{car.id}}</div>
+  <div>
+    <label>Make: </label>
+    <input [(ngModel)]="car.make" placeholder="make" />
+    <label>Model: </label>
+    <input [(ngModel)]="car.model" placeholder="model" />
+    <label>Year: </label>
+    <input [(ngModel)]="car.year" placeholder="year" />
+    <label>KM: </label>
+    <input [(ngModel)]="car.km" placeholder="km" />
+    <label>DealerName: </label>
+    <input [(ngModel)]="car.dealername" placeholder="dealername" />
+    <label>StockNo: </label>
+    <input [(ngModel)]="car.stockno" placeholder="stockno" />
+  </div>
+    <button (click)="save()">Save</button>
+</div>
+<button (click)="goBack()">Back</button>

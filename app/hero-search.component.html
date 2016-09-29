@@ -1,0 +1,14 @@
+<div id="search-component">
+  <h4>Search (Searches on Make, Model, DealerName and StockNo):</h4>
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+  <div>
+<div class="grid grid-pad">
+  <div *ngFor="let car of cars | async" class="col-1-4">
+    <div class="module car">
+      <h4>Make: {{car.make}}</h4><br>
+      <h4>Model: {{car.model}}</h4>      
+    </div>
+  </div>
+</div>
+  </div>
+</div>

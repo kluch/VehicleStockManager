@@ -1,0 +1,11 @@
+<h3>List of Cars</h3>
+<div class="grid grid-pad">
+  <div *ngFor="let car of cars" (click)="gotoDetail(car)" class="col-1-4">
+    <div class="module car">
+      <img class="list-img" src="http://localhost:4000/image/{{car.image}}" alt='Image' />
+      <h4>Make: {{car.make}}</h4><br>
+      <h4>Model: {{car.model}}</h4>      
+    </div>
+  </div>
+</div>
+<!--<hero-search></hero-search>-->
