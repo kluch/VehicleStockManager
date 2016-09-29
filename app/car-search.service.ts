@@ -2,11 +2,10 @@ import {Injectable} from '@angular/core';
 import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs';
 
-import {Hero} from './hero';
 import {Car} from './car';
 
 @Injectable()
-export class HeroSearchService{
+export class CarSearchService{
     constructor(private http: Http){}
 
     // search(term: string): Observable<Car[]>{

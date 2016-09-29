@@ -2,22 +2,22 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Params }   from '@angular/router';
 import { Location }                 from '@angular/common';
 
-import { HeroService } from './hero.service';
+import { CarService } from './car.service';
 
 import { Car } from './car';
 
 @Component({
-    selector: 'my-hero-detail',
+    selector: 'my-car-detail',
     moduleId: module.id,
-    templateUrl: 'hero-detail.component.html',
-    styleUrls: ['hero-detail.component.css']
+    templateUrl: 'car-detail.component.html',
+    styleUrls: ['car-detail.component.css']
 })
 
-export class HeroDetailComponent implements OnInit {
+export class CarDetailComponent implements OnInit {
     car: Car;
 
     constructor(
-        private heroService: HeroService,
+        private carService: CarService,
         private route: ActivatedRoute,
         private location: Location
     ){}
@@ -25,7 +25,7 @@ export class HeroDetailComponent implements OnInit {
     ngOnInit(): void {
         this.route.params.forEach((params: Params) => {
             let id = params['id'];
-            this.heroService.getCar(id)
+            this.carService.getCar(id)
             .then(car => this.car = car);
         });
     }

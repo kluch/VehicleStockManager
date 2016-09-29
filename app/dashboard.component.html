@@ -1,10 +1,9 @@
 <h3>List of Cars</h3>
 <div class="grid grid-pad">
-  <div *ngFor="let car of cars" (click)="gotoDetail(car)" class="col-1-4">
+  <div *ngFor="let car of cars" class="col-1-4">
     <div class="module car">
-      <img class="list-img" src="http://localhost:4000/image/{{car.image}}" alt='Image' />
-      <h4>Make: {{car.make}}</h4><br>
-      <h4>Model: {{car.model}}</h4>      
+     <div> <img class="list-img" src="http://localhost:4000/image/{{car.image}}" alt='Image' /></div>
+      <div> Make: {{car.make}}<br>Model: {{car.model}}<br>StockNo: {{car.stockno}}<br>DealerName: {{car.dealername}}<br>KM: {{car.km}}<br>Year: {{car.year}}</div>      
     </div>
   </div>
 </div>

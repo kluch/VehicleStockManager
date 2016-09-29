@@ -1,10 +1,10 @@
 import {ModuleWithProviders} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {HeroesComponent} from './heroes.component';
+import {CarComponent} from './car.component';
 import {DashboardComponent} from './dashboard.component';
-import {HeroDetailComponent} from './hero-detail.component';
-import {HeroSearchComponent} from './hero-search.component';
+import {CarDetailComponent} from './car-detail.component';
+import {CarSearchComponent} from './car-search.component';
 
 const appRoutes: Routes = [
     {
@@ -17,16 +17,16 @@ const appRoutes: Routes = [
         component: DashboardComponent
     },
     {
-        path: 'heroes',
-        component: HeroesComponent
+        path: 'cars',
+        component: CarComponent
     },
     {
         path: 'detail/:id',
-        component: HeroDetailComponent 
+        component: CarDetailComponent 
     },
     {
         path: 'search',
-        component: HeroSearchComponent
+        component: CarSearchComponent
     }
 ];
 

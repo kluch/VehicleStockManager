@@ -3,24 +3,24 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { HeroSearchService } from './hero-search.service';
-import { Hero } from './hero';
+import { CarSearchService } from './car-search.service';
+
 import { Car } from './car';
 
 
 @Component({
     moduleId: module.id,
-    selector: 'hero-search',
-    templateUrl: 'hero-search.component.html',
-    styleUrls : ['hero-search.component.css'],
-    providers: [HeroSearchService]
+    selector: 'car-search',
+    templateUrl: 'car-search.component.html',
+    styleUrls : ['car-search.component.css'],
+    providers: [CarSearchService]
 })
-export class HeroSearchComponent implements OnInit {
+export class CarSearchComponent implements OnInit {
     cars: Observable<Car[]>;
     private searchTerms = new Subject<string>();
     
     constructor(
-        private heroSearchService: HeroSearchService,
+        private carSearchService: CarSearchService,
         private router: Router
     ) { }
 
@@ -35,7 +35,7 @@ export class HeroSearchComponent implements OnInit {
         .distinctUntilChanged() // ignore if next search term is same as previous
         .switchMap(term => term // switch to new observable each time
         // return the http search observable
-        ? this.heroSearchService.search(term)
+        ? this.carSearchService.search(term)
         // or the observable of empty heroes if no search term
         :Observable.of<Car[]>([]))
         .catch(error => {

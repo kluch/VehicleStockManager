@@ -1,18 +1,17 @@
 import { Component } from '@angular/core';
-import { Hero } from './hero';
 import { Car } from './car';
-import { HeroService } from './hero.service';
+import { CarService } from './car.service';
 import { OnInit } from '@angular/core';
 import { Router } from '@angular/router'
 
 @Component({
     moduleId: module.id,
-    selector: 'my-heroes',
-    templateUrl: 'heroes.component.html',
-    styleUrls: ['heroes.component.css']
+    selector: 'my-cars',
+    templateUrl: 'car.component.html',
+    styleUrls: ['car.component.css']
 })
 
-export class HeroesComponent implements OnInit {
+export class CarComponent implements OnInit {
     cars: Car[];
     filesToUpload: Array<File>;
     files: Array<File> = [];
@@ -20,7 +19,7 @@ export class HeroesComponent implements OnInit {
 
     constructor(
         private router: Router,
-        private heroService: HeroService) { 
+        private carService: CarService) { 
             this.filesToUpload = [];
         }
 
@@ -68,7 +67,7 @@ export class HeroesComponent implements OnInit {
     }
 
     ngOnInit(): void {
-        // this.getHeroes();
+
     }
 
     add(make: string, model: string, year: string, km: string, dealername: string, stockno: string): void{
@@ -90,7 +89,7 @@ export class HeroesComponent implements OnInit {
             image: this.uploadedFileDetails.originalname
         }
         console.log("newCar");
-        this.heroService.create(newCar)
+        this.carService.create(newCar)
         .then(car => {
             //indicate the the car has been saved.
             // this.cars.push(car);

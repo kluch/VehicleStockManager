@@ -4,11 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule }   from '@angular/forms';
 import { HttpModule }    from '@angular/http';
 
-import { HeroDetailComponent } from './hero-detail.component';
-import { HeroesComponent } from './heroes.component';
-import { HeroService }         from './hero.service';
+import { CarDetailComponent } from './car-detail.component';
+import { CarComponent } from './car.component';
+import { CarService }         from './car.service';
 import {DashboardComponent} from './dashboard.component';
-import {HeroSearchComponent} from './hero-search.component';
+import {CarSearchComponent} from './car-search.component';
 
 import {routing} from './app.routing';
 
@@ -28,12 +28,12 @@ import { InMemoryDataService }  from './in-memory-data.service';
    ],
   declarations: [ 
     AppComponent,
-    HeroDetailComponent,
-    HeroesComponent,
+    CarDetailComponent,
+    CarComponent,
     DashboardComponent,
-    HeroSearchComponent
+    CarSearchComponent
   ],
-  providers: [HeroService],
+  providers: [CarService],
   bootstrap: [ AppComponent ]
   
 })
